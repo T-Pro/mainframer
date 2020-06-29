@@ -44,28 +44,15 @@ which uses [`zlib` values](https://www.zlib.net/manual.html):
 > `1` gives best speed, `9` gives best compression, `0` gives no compression at all
 > (the input data is simply copied a block at a time).
 
-## `.mainframer/ignore.yml`
+## `.mainframer/ignore`
 
-```yaml
-push:
-  - "pattern"
-  - "..."
-pull:
-  - "pattern"
-  - "..."
-both:
-  - "pattern"
-  - "..."
+```
+.git
+.gradle
+.idea
+build
+local.properties
 ```
 
-Name   | Description                                                   | Suggestions
--------|---------------------------------------------------------------|------------
-`push` | Patterns used to copy files from local machine to remote one. | Build results.
-`pull` | Patterns used to copy files from remote machine to local one. | Source code.
-`both` | Patterns used to copy files both ways.                        | VCS, IDE-related directories.
-
-Ignore patterns are inherited from underlying `rsync`.
-Please refer to [`rsync` documentation](https://download.samba.org/pub/rsync/rsync.html) —
-see the _Include/Exclude Pattern Rules_ section.
-The format is very similar to `.gitignore`.
+The ignore file respects the same structure as `.gitignore` file.
 
